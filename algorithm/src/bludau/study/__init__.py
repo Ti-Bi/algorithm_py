@@ -1,1 +1,1 @@
-__author__ = 'tibi'
+__author__ = 'Anatol Bludau'
