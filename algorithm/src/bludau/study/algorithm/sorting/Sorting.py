@@ -44,10 +44,33 @@ class Sorting(object):
         :rtype : sorted input list
         :param lst: list for sorting
         """
-        temp_lst = list(lst)
-        cls.__merge_sort(lst, temp_lst)
+        if len(lst) <= 1:
+            return lst
+        else:
+            middle = len(lst) // 2
+            return cls.__merge(cls.merge_sort(lst[:middle]), cls.merge_sort(lst[middle:]))
+
+
 
     @classmethod
-    def __merge_sort(cls, lst, temp_lst, start, end):
-        lstt = list(lst)
-        lstt.
+    def __merge(cls, left, right):
+        """
+        The simple merging of two lists for merge sort.
+        :rtype : merged list
+        :param left: left part
+        :param right: right part
+        """
+        result = []
+        i = j = 0
+        while i < len(left) and j < len(right):
+            if left[i] <= right[j]:
+                result.append(left[i])
+                i += 1
+            else:
+                result.append(right[j])
+                j += 1
+
+        result += left[i:]
+        result += right[j:]
+
+        return result
