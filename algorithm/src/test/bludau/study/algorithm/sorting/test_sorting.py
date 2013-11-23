@@ -46,3 +46,13 @@ class TestSorting(TestCase):
     def test_merge_sort_with_doubles(self):
         sorted = Sorting.merge_sort([])
         self.assertListEqual([], sorted)
+
+    def test_partition(self):
+        r_seq = range(55) + range(56, 100)
+        random.shuffle(r_seq)
+        r_seq = [55] + r_seq
+        self.assertEquals(55, Sorting.partition(r_seq, 0, len(r_seq)-1))
+
+    def test_partition_consistence(self):
+        Sorting.partition(self.seq, 0, len(self.seq)-1)
+        self.assertListEqual(self.sorted_seq, sorted(self.seq))

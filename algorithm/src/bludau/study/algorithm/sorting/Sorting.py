@@ -1,3 +1,5 @@
+import random
+
 __author__ = 'Anatol Bludau'
 
 
@@ -31,8 +33,8 @@ class Sorting(object):
         """
         for i in range(1, len(lst)):
             j = i
-            while j > 0 and lst[j-1] > lst[j]:
-                lst[j-1], lst[j] = lst[j], lst[j-1]
+            while j > 0 and lst[j - 1] > lst[j]:
+                lst[j - 1], lst[j] = lst[j], lst[j - 1]
                 j -= 1
 
         return lst
@@ -50,7 +52,47 @@ class Sorting(object):
             middle = len(lst) // 2
             return cls.__merge(cls.merge_sort(lst[:middle]), cls.merge_sort(lst[middle:]))
 
+    @classmethod
+    def quick_sort(cls, lst):
+        """
+        The simple implementation of quick sort
+        :rtype : sorted list (same object with lst)
+        :param lst: list for sorting
+        """
+        #for reduce influence from input
+        random.shuffle(lst)
 
+    @classmethod
+    def partition(cls, lst, start_index, end_index):
+        """
+        Separating list on two parts. First element is used as a base element.
+        At the result list all of elements witch is less than base place to the left of it
+        and witch is greater to the right.
+        :rtype : index of the base element in the result
+        :param lst: the list for the partition
+        :param start_index: the index from partition will be started (index of the base element)
+        :param end_index: the index to partition will be ended
+        """
+        base = lst[start_index]
+        i = start_index + 1
+        j = end_index
+        while True:
+            while lst[i] < base:
+                i += 1
+                if i == end_index:
+                    break
+
+            while lst[j] > base:
+                j -= 1
+                if j == start_index:
+                    break
+
+            if i >= j:
+                break
+            lst[i], lst[j] = lst[j], lst[i]
+        pass
+        lst[start_index], lst[j] = lst[j], lst[start_index]
+        return j
 
     @classmethod
     def __merge(cls, left, right):
