@@ -53,6 +53,15 @@ class TestSorting(TestCase):
         r_seq = [55] + r_seq
         self.assertEquals(55, Sorting.partition(r_seq, 0, len(r_seq)-1))
 
+    def test_partition_with_one_element(self):
+        lst_for_partition = [3]
+        Sorting.partition(lst_for_partition, 0, 0)
+        self.assertListEqual([3], lst_for_partition)
+
     def test_partition_consistence(self):
         Sorting.partition(self.seq, 0, len(self.seq)-1)
         self.assertListEqual(self.sorted_seq, sorted(self.seq))
+
+    def test_quick_sort(self):
+        Sorting.quick_sort(self.seq)
+        self.assertListEqual(self.sorted_seq, self.seq)
