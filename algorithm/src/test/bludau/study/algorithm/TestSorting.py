@@ -1,6 +1,6 @@
 import random
 from unittest import TestCase
-from bludau.study.algorithm.sorting.Sorting import Sorting
+from bludau.study.algorithm.Sorting import Sorting
 
 __author__ = 'Anatol Bludau'
 

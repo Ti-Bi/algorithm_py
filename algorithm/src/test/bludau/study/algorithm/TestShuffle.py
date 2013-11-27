@@ -1,10 +1,10 @@
 from unittest import TestCase
-from bludau.study.algorithm.shuffle.Shuffle import Shuffle
+from bludau.study.algorithm.Shuffle import Shuffle
 
 __author__ = 'Anatol Bludau'
 
 
-class TestLinearShuffle(TestCase):
+class TestShuffle(TestCase):
 
     def setUp(self):
         self.seq = range(10)
