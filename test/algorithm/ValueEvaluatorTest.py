@@ -1,0 +1,35 @@
+__author__ = 'Anatol Bludau'
+
+from unittest import TestCase
+from algorithm import ValueEvaluator
+
+
+class ValueEvaluatorTest(TestCase):
+
+    def test_eval_reverse_polish_notation_list_empty_list(self):
+        res = ValueEvaluator.eval_reverse_polish_notation_list([])
+        self.assertIsNone(res)
+
+    def test_eval_reverse_polish_notation_list_none(self):
+        res = ValueEvaluator.eval_reverse_polish_notation_list(None)
+        self.assertIsNone(res)
+
+    def test_eval_reverse_polish_notation_list_simple_case_plus(self):
+        val = [1, 2, "+"]
+        res = ValueEvaluator.eval_reverse_polish_notation_list(val)
+        self.assertEqual(3, res)
+
+    def test_eval_reverse_polish_notation_list_simple_case_sub(self):
+        val = [1, 2, "-"]
+        res = ValueEvaluator.eval_reverse_polish_notation_list(val)
+        self.assertEqual(-1, res)
+
+    def test_eval_reverse_polish_notation_list_simple_case_multiplication(self):
+        val = [1, 2, "*"]
+        res = ValueEvaluator.eval_reverse_polish_notation_list(val)
+        self.assertEqual(2, res)
+
+    def test_eval_reverse_polish_notation_list_simple_case_division(self):
+        val = [1, 2, "/"]
+        res = ValueEvaluator.eval_reverse_polish_notation_list(val)
+        self.assertAlmostEqual(0.5, res)

@@ -1,7 +1,7 @@
 import random
 from unittest import TestCase
 
-from algorithm.Sorting import Sorting
+from algorithm import Sorting
 
 
 __author__ = 'Anatol Bludau'
