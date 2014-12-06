@@ -1,5 +1,7 @@
 from unittest import TestCase
-from bludau.study.algorithm.Shuffle import Shuffle
+
+from algorithm.Shuffle import Shuffle
+
 
 __author__ = 'Anatol Bludau'
 
