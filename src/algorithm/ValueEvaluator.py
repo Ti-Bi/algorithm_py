@@ -23,6 +23,11 @@ class ValueEvaluator(object):
         if not str_input:
             return None
 
+        token_list = str_input.split()
+
+        return cls.eval_reverse_polish_notation_list(token_list)
+
+
     @classmethod
     def eval_reverse_polish_notation_list(cls, list_input):
         """
