@@ -5,6 +5,9 @@ from algorithm import ValueEvaluator
 
 
 class ValueEvaluatorTest(TestCase):
+    """
+    The set of testes for testing value evaluators.
+    """
 
     def test_eval_reverse_polish_notation_list_empty_list(self):
         res = ValueEvaluator.eval_reverse_polish_notation_list([])
@@ -33,3 +36,9 @@ class ValueEvaluatorTest(TestCase):
         val = [1, 2, "/"]
         res = ValueEvaluator.eval_reverse_polish_notation_list(val)
         self.assertAlmostEqual(0.5, res)
+
+    def test_eval_reverse_polish_notation_list_complex_formula(self):
+        val = [1, 2, "+", 4, "*", 6, "/", 4, '-']
+        res = ValueEvaluator.eval_reverse_polish_notation_list(val)
+        self.assertAlmostEqual(-2, res)
+
