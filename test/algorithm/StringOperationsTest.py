@@ -28,6 +28,10 @@ class StringOperationsTest(TestCase):
         res = StringOperations.is_palindromic_string(None)
         self.assertFalse(res)
 
+    def test_is_palindromic_string_one_symbol(self):
+        res = StringOperations.is_palindromic_string("f")
+        self.assertTrue(res)
+
     """
     -------------------------------------------------------------------------------------------
     ### find_the_largest_palindromic_substring_brut_force()
@@ -57,4 +61,3 @@ class StringOperationsTest(TestCase):
     def test_find_the_largest_palindromic_substring_brut_force_one_letter(self):
         res = StringOperations.find_the_largest_palindromic_substring_brut_force("f")
         self.assertEqual("f", res)
-
