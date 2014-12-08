@@ -19,11 +19,18 @@ class StringOperations(object):
 
         string_len = len(string)
 
+        longest_substring_length = 0
         longest_substring = None
 
         for i in range(string_len):
-            for j in range(string_len):
+            for j in range(i + 1, string_len):
                 current_substring_len = j - i
+                current_substring = string[i:j+1]
+                if cls.is_palindromic_string(current_substring) and current_substring_len > longest_substring_length:
+                    longest_substring = current_substring
+                    longest_substring_length = current_substring_len
+
+        return longest_substring
 
     @classmethod
     def is_palindromic_string(cls, string):
