@@ -9,6 +9,10 @@ class ValueEvaluatorTest(TestCase):
     The set of testes for testing value evaluators.
     """
 
+    #-------------------------------------------------------------------------------------------
+    ### eval_reverse_polish_notation_empty_string()
+    #-------------------------------------------------------------------------------------------
+
     def test_eval_reverse_polish_notation_empty_string(self):
         res = ValueEvaluator.eval_reverse_polish_notation("")
         self.assertIsNone(res)
