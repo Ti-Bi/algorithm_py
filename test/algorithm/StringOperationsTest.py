@@ -61,3 +61,13 @@ class StringOperationsTest(TestCase):
     def test_find_the_largest_palindromic_substring_brut_force_one_letter(self):
         res = StringOperations.find_the_largest_palindromic_substring_brut_force("f")
         self.assertEqual("f", res)
+
+    """
+    -------------------------------------------------------------------------------------------
+    ### find_the_largest_palindromic_substring_matrix()
+    -------------------------------------------------------------------------------------------
+    """
+
+    def test_find_the_largest_palindromic_substring_matrix_simple_case(self):
+        res = StringOperations.find_the_largest_palindromic_substring_matrix("testtset")
+        self.assertEqual("testtset", res)
