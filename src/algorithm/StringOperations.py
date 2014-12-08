@@ -18,6 +18,8 @@ class StringOperations(object):
             return None
 
         string_len = len(string)
+        if string_len == 1:
+            return string
 
         longest_substring_length = 0
         longest_substring = None

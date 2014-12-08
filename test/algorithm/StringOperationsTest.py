@@ -50,7 +50,11 @@ class StringOperationsTest(TestCase):
         res = StringOperations.find_the_largest_palindromic_substring_brut_force("sd;glolsd sk alskdghh ;asdkgstesttsetfjalsdhgakjsgupagdfap9weog")
         self.assertEqual("testtset", res)
 
-    def test_find_the_largest_palindromic_substring_brut_forcef_string_without_palindromic_substring(self):
+    def test_find_the_largest_palindromic_substring_brut_force_string_without_palindromic_substring(self):
         res = StringOperations.find_the_largest_palindromic_substring_brut_force("abcdefghijklmnopqrstuvwxyz")
         self.assertIsNone(res)
+
+    def test_find_the_largest_palindromic_substring_brut_force_one_letter(self):
+        res = StringOperations.find_the_largest_palindromic_substring_brut_force("f")
+        self.assertEqual("f", res)
 
