@@ -10,8 +10,8 @@ __author__ = 'Anatol Bludau'
 class TestSorting(TestCase):
 
     def setUp(self):
-        self.sorted_seq = range(100)
-        self.sorted_seq_with_doubles = range(100) + range(35, 75)
+        self.sorted_seq = list(range(100))
+        self.sorted_seq_with_doubles = list(range(100)) + list(range(35, 75))
         self.empty_list = []
 
         # creation of shuffled lists
@@ -49,7 +49,7 @@ class TestSorting(TestCase):
         self.assertListEqual([], sorted_list)
 
     def test_partition(self):
-        r_seq = range(55) + range(56, 100)
+        r_seq = list(range(55)) + list(range(56, 100))
         random.shuffle(r_seq)
         r_seq = [55] + r_seq
         self.assertEquals(55, Sorting.partition(r_seq, 0, len(r_seq)-1))
